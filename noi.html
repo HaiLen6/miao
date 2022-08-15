@@ -1,4 +1,4 @@
-<!-- <script type="text/javascript" id="ch0103/01">
+<script type="text/javascript" id="ch0103/01">
     var a = Number(prompt("请输入一个整数:"));
     var b = Number(prompt("请输入一个整数:"));
     var c = a + b;
@@ -788,23 +788,271 @@
             N = N/2;
         }
 }
-</script> -->
+</script>
 
 <script type="text/javascript" id="ch0105/22">
     // debugger
-    var N = Number(prompt("请输入一个正整数:"));
+</script>
 
-
-    while (N) {
-        if (N === 1) {
-            console.log("END");
-            break;
-        } else if (N % 2 !== 0) {
-            console.log("%d*3+1=%d", N, N*3+1);
-            N = N*3+1;
+<script type="text/javascript" id="ch0105/23">
+    // debugger
+    var m = Number(prompt("请输入每天开始时的药品总量:"));
+    var n = Number(prompt("请输入每天取药的人数:"));
+    var can_not_people = 0;
+    var leave = m;
+    for (let i = 1; i <= n; i++) {
+        let people_get = Number(prompt("请输入病人希望取走的药品数量:"));
+        if (leave > people_get) {
+            leave -= people_get;
         } else {
-            console.log("%d/2=%d", N, N/2);
-            N = N/2;
+            can_not_people += 1;
         }
-}
+    }
+    console.log(can_not_people);
+</script>
+
+<script type="text/javascript" id="ch0105/24">
+    // debugger
+    var n = Number(prompt("输入正整数n:"));
+    var long = 0;
+    for (let i = 1; i <= n; i++) {
+        let sp = Number(prompt("输入收缩压数值:"));
+        let dbs = Number(prompt("输入舒张压数值:"));
+        if (sp >= 90 && sp <= 140 && dbs >= 60 && dbs <= 90) {
+            long += 1;
+        }
+    }
+    console.log(long);
+</script>
+
+<script type="text/javascript" id="ch0105/25">
+    // debugger
+</script>
+
+<script type="text/javascript" id="ch0105/26">
+    // debugger
+    var n = Number(prompt("请输入四位数的个数:"));
+    var sum = 0;
+    for (let i = 1; i <= n; i++) {
+        let s = Number(prompt("请输入一个四位数:"));
+        let ge = s % 10;
+        let shi = (s % 100 - ge) / 10;
+        let bai = (s % 1000 - s % 100) / 100;
+        let qian = (s - s % 1000) / 1000;
+        if ((ge - qian - bai - shi) > 0) {
+            sum += 1;
+        }
+    }
+    console.log(sum);
+</script>
+
+<script type="text/javascript" id="ch0105/27">
+    // debugger
+    var K = Number(prompt("请输入一个整数K:"));
+    var sn = 0;
+    var n = 1;
+    var tag = true;
+
+    while (tag) {
+        sn += 1/n;
+        if (sn > K) {
+            console.log(n);
+            tag = false;
+        } else {
+            n += 1;
+        }
+
+    }
+</script>
+
+<script type="text/javascript" id="ch0105/28">
+    // debugger
+    var N = Number(prompt("请输入一个整数:"));
+    var flag = true;
+    while (flag) {
+        d = N % 10;
+        console.log(d);
+        N = N - d;
+        N = N / 10;
+        if (N <= 0) {
+            flag = false;
+        }
+
+    }
+</script>
+
+<script type="text/javascript" id="ch0105/29">
+    // debugger
+</script>
+
+<script type="text/javascript" id="ch0105/30">
+    // debugger
+    var m = Number(prompt("请输入正整数m:"));
+    var k = Number(prompt("请输入正整数k:"));
+    var count = 0;
+    if (m % 19 === 0) {
+        do {
+        d = m % 10;
+        m = (m - d) / 10;
+        if (d === 3) {
+            count += 1;
+        }
+    } while (d > 0);
+        if (count === k) {
+            console.log("YES");
+        } else {
+            console.log("NO");
+        }
+} else {
+        console.log("NO");
+    }
+</script>
+
+<script type="text/javascript" id="ch0105/31">
+    // debugger
+</script>
+
+<script type="text/javascript" id="ch0105/32">
+    // debugger
+    var n = Number(prompt("请输入一个正整数:"));
+    var sum = 0;
+    var q = 2;
+    var p = 1;
+
+    for (let i = 1; i <= n; i++) {
+        sum += q/p;
+        q = q + p;
+        p = q - p;
+    }
+    console.log(sum.toFixed(4));
+</script>
+
+<script type="text/javascript" id="ch0105/33">
+    // debugger
+    var n = Number(prompt("请输入一个正整数:"));
+    var sum = 0;
+    for (let i = 1; i <= n; i++) {
+        sum += (-1)**(i-1) * (1/i);
+    }
+    console.log(sum.toFixed(4));
+</script>
+
+<script type="text/javascript" id="ch0105/34">
+    // debugger
+    var n = Number(prompt("请输入一个正整数:"));
+    var sum = 0;
+
+    for (let i = 1; i <= n; i++) {
+        var ini = 1;
+        for (let j = 1; j <= i; j++) {
+            ini *= j;
+        }
+        sum += ini;
+    }
+    console.log(sum);
+</script>
+
+<script type="text/javascript" id="ch0105/35">
+    // debugger
+    var n = Number(prompt("请输入一个正整数:"));
+    var e = 1;
+    for (let i = 1; i <= n; i++) {
+        var ini = 1;
+        for (let j = 1; j <= i; j++) {
+            ini *= j;
+        }
+        e += 1/ini;
+    }
+    console.log(e.toFixed(10));
+
+</script>
+
+<script type="text/javascript" id="ch0105/36">
+    // debugger
+    var x = Number(prompt("请输入一个单精度浮点数:"));
+    var n = Number(prompt("请输入一个正整数:"));
+    var sum = 1;
+    for (let i = 1; i <= n; i++) {
+        sum += x**(i);
+    }
+    console.log(sum.toFixed(2));
+</script>
+
+<script type="text/javascript" id="ch0105/37">
+    // debugger
+</script>
+
+<script type="text/javascript" id="ch0105/38">
+    // debugger
+</script>
+
+<script type="text/javascript" id="ch0105/39">
+    // debugger
+    var n = Number(prompt("请输入正整数n:"));
+    var sum = 0;
+    for (let i = 1; i <= n; i++) {
+        if (i % 7 !== 0 && ((i % 10) !== 7 && (i - 1 % 10) / 10 !== 7)) {
+            sum += i**2;
+        }
+    }
+    console.log(sum);
+</script>
+
+<script type="text/javascript" id="ch0105/40">
+    // debugger
+</script>
+
+<script type="text/javascript" id="ch0105/41">
+    // debugger
+</script>
+
+<script type="text/javascript" id="ch0105/42">
+    // debugger
+    var height = Number(prompt("请输入高度:"));
+    var width = Number(prompt("请输入宽度:"));
+    var char = prompt("请输入一个字符:");
+    var flag = Number(prompt("请输入空心还是实心:"));
+
+    if (flag === 0) {
+        for (let i = 1; i <= height; i++) {
+            if (i === 1 || i === height) {
+                var ini_0_s_e = char;
+                for (let j = 1; j <= width; j++) {
+                    ini_0_s_e += char;
+                }
+                console.log(ini_0_s_e);
+            } else {
+                var ini_0_mi = char;
+                for (let j = 1; j <= width; j++) {
+                    if (j === width) {
+                        ini_0_mi += char;
+                    } else {
+                        ini_0_mi += ' ';
+                    }
+                }
+                console.log(ini_0_mi);
+            }
+        }
+    } else {
+        for (let i = 1; i <= height; i++) {
+            ini_1 = char;
+            for (let j = 1; j <= width; j++) {
+                ini_1 += char;
+            }
+            console.log(ini_1);
+        }
+
+    }
+</script>
+
+<script type="text/javascript" id="ch0105/43">
+    // debugger
+</script>
+
+<script type="text/javascript" id="ch0105/44">
+    // debugger
+</script>
+
+<script type="text/javascript" id="ch0105/45">
+    // debugger
 </script>
