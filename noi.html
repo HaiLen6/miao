@@ -1013,46 +1013,98 @@
     var char = prompt("请输入一个字符:");
     var flag = Number(prompt("请输入空心还是实心:"));
 
+    var result = '';
+
     if (flag === 0) {
         for (let i = 1; i <= height; i++) {
-            if (i === 1 || i === height) {
-                var ini_0_s_e = char;
+            if (i === 1) {
                 for (let j = 1; j <= width; j++) {
-                    ini_0_s_e += char;
+                    result += char;
                 }
-                console.log(ini_0_s_e);
-            } else {
-                var ini_0_mi = char;
+                result += '\n';
+            } else if (i === height) {
                 for (let j = 1; j <= width; j++) {
-                    if (j === width) {
-                        ini_0_mi += char;
+                    result += char;
+                }
+            } else {
+                for (let j = 1; j <= width; j++) {
+                    if (j === 1 || j === width) {
+                        result += char;
                     } else {
-                        ini_0_mi += ' ';
+                        result += ' ';
                     }
                 }
-                console.log(ini_0_mi);
+                result += '\n';
             }
         }
     } else {
         for (let i = 1; i <= height; i++) {
-            ini_1 = char;
-            for (let j = 1; j <= width; j++) {
-                ini_1 += char;
+            if (i === height) {
+                for (let j = 1; j <= width; j++) {
+                result += char;
+                }
+            } else {
+                for (let j = 1; j <= width; j++) {
+                result += char;
+                }
+                result += '\n';
             }
-            console.log(ini_1);
         }
-
     }
+    console.log(result);
 </script>
 
 <script type="text/javascript" id="ch0105/43">
     // debugger
+    var n = Number(prompt("请输入一个正整数:"));
+    for (let i = 2; i < n; i++) {
+        if (n % i === 0) {
+            console.log(n / i);
+            break;
+        }
+    }
 </script>
 
 <script type="text/javascript" id="ch0105/44">
     // debugger
+    var n = Number(prompt("请输入一个正整数:"));
+    var count = 0;
+
+    for (let i = 2; ; i++) {
+        var i_is_prime = true;
+
+        for (let j = 2; j < i; j++) {
+            if (i % j === 0) {
+                i_is_prime = false;
+                break;
+            }
+        }
+
+        if (i_is_prime) {
+            count++;
+            if (count === n) {
+                console.log(i);
+            }
+        }
+    }
 </script>
 
 <script type="text/javascript" id="ch0105/45">
     // debugger
+    var n = Number(prompt("请输入天数:"));
+    var sum = 0;
+    var coins = 1;
+    var days = 0;
+
+    for (let i = 1; i <= n; i++) {
+        sum += coins;
+        days++;
+
+        if (days === coins) {
+            coins++;
+            days = 0;
+        }
+    }
+    console.log(sum);
+
 </script>
