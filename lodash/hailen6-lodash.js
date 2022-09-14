@@ -91,15 +91,33 @@ var hailen6 = {
     }
 
     return ary;
+  },
+
+  findIndex: function(ary, f, fromIndex = 0) {
+    for (let i = fromIndex; i < ary.length; i++) {
+      if (f(ary[i])) {
+        return i;
+      }
+    }
+
+    return -1;
   }
+
+
 }
+
+
+
+
+
+
 
 
 /*
   compact,✔
   chunk,✔
   fill,✔
-  drop,
+  drop,✔
   findIndex,
   findLastIndex,
   flatten,
