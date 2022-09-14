@@ -32,6 +32,43 @@ var hailen6 = {
     }
 
     return result;
+  },
+
+  difference: function(ary, ...values) {
+    var result = [];
+    var aryObj = {};
+    var comparisionObj = {};
+
+    for (let i = 0; i < ary.length; i++) {
+      if (!aryObj[ary[i]]) {
+        aryObj[ary[i]] = 0;
+      } else {
+        aryObj[ary[i]]++;
+      }
+    }
+
+    values = values.flat(Infinity);
+
+    for (let i = 0; i < values.length; i++) {
+      if (!comparisionObj[values[i]]) {
+        comparisionObj[values[i]] = 0;
+      } else {
+        comparisionObj[values[i]]++;
+      }
+    }
+
+    for (let i = 0; i < ary.length; i++) {
+      if (ary[i] in comparisionObj) {
+        continue;
+      } else {
+        result.push(ary[i]);
+      }
+    }
+
+    return result;
+  },
+
+  differenceBy: function(ary, values, f) {
+
   }
-  // fill:
 }
