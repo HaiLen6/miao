@@ -26,7 +26,7 @@ var hailen6 = {
     var result = [];
 
     for (let i = 0; i < ary.length; i++) {
-      if (ary[i] !== false && ary[i] !== null && ary[i] != "" && ary[i] !== undefined && ary[i] !== NaN) {
+      if (ary[i]) {
         result.push(ary[i]);
       }
     }
