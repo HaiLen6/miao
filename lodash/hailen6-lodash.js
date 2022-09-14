@@ -20,7 +20,7 @@ var hailen6 = {
     }
 
     return result;
-  },
+  }
   // compact:
   // fill:
 }
