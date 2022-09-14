@@ -79,6 +79,18 @@ var hailen6 = {
     }
 
     return ary;
+  },
+
+  drop: function(ary, n = 1) {
+    if (n >= ary.length) {
+      return [];
+    }
+
+    for (let i = 0; i < n; i++) {
+      ary.shift();
+    }
+
+    return ary;
   }
 }
 
