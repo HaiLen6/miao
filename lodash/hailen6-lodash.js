@@ -1,5 +1,5 @@
 var hailen6 = {
-  chunk: function chunk(ary, size = 1) {
+  chunk: function(ary, size = 1) {
     var result = [];
     var bracketsNumber = Math.ceil(ary.length / size);
 
@@ -20,7 +20,7 @@ var hailen6 = {
     }
 
     return result;
-  }
+  },
   // compact:
   // fill:
 }
