@@ -69,6 +69,65 @@ var hailen6 = {
   },
 
   differenceBy: function(ary, values, f) {
+    var result = [];
+    // 未完待续
+  },
 
+  fill: function(ary, value, start = 0, end = ary.length) {
+    for (let i = start; i < end; i++) {
+      ary[i] = value;
+    }
+
+    return ary;
   }
 }
+
+
+/*
+  compact,✔
+  chunk,✔
+  fill,✔
+  drop,
+  findIndex,
+  findLastIndex,
+  flatten,
+  flattenDeep,
+  flattenDepth
+  fromPairs,
+  head,
+  indexOf,
+  lastIndexOf,
+  initial,
+  join,
+  last,
+  pull,
+  reverse,
+  every,
+  some
+  countBy,
+  groupBy,
+  keyBy,
+  forEach,
+  map,
+  filter,
+  reduce,
+  reduceRight,
+  size,
+  sortBy,
+  sample,
+  isUndefined,
+  isNull,
+  isNil,
+  max,
+  min,
+  maxBy,
+  minBy,
+  round,
+  sumBy
+  flagMap,
+  flatMapDepth,
+  get,
+  has,
+  mapKeys,
+  mapValues
+*/
