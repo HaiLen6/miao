@@ -176,6 +176,24 @@ var hailen6 = {
     return ary[0];
   },
 
+  indexOf: function(ary, value, fromIndex = 0) {
+    if (fromIndex < 0) {
+      for (let i = fromIndex + ary.length; i < ary.length; i++) {
+        if (ary[i] === value) {
+          return i;
+        }
+      }
+      return -1;
+    } else if (fromIndex >= 0) {
+      for (let i = fromIndex; i < ary.length; i++) {
+        if (ary[i] === value) {
+          return i;
+        }
+      }
+      return -1;
+    }
+  },
+
 
 }
 
@@ -198,7 +216,7 @@ var hailen6 = {
   flattenDeep,✔
   flattenDepth✔
   fromPairs,✔
-  head,
+  head,✔
   indexOf,
   lastIndexOf,
   initial,
