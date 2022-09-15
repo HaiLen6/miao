@@ -172,6 +172,10 @@ var hailen6 = {
     return result;
   },
 
+  head: function(ary) {
+    return ary[0];
+  },
+
 
 }
 
