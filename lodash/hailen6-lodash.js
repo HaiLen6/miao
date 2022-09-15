@@ -101,10 +101,70 @@ var hailen6 = {
     }
 
     return -1;
-  }
+  },
+
+  flatten: function(ary) {
+    var result = [];
+
+    for (let i = 0; i < ary.length; i++) {
+      if (!Array.isArray(ary[i])) {
+        result.push(ary[i]);
+      } else {
+        for (let j = 0; j < ary[i].length; j++) {
+          result.push(ary[i][j]);
+        }
+      }
+    }
+
+    return result;
+  },
+
+  flattenDeep: function(ary) {
+    var result = [];
+
+    function actionInnerDeep(ary) {
+      for (let i = 0; i < ary.length; i++) {
+        if (Array.isArray(ary[i])) {
+          actionInnerDeep(ary[i]);
+        } else {
+          result.push(ary[i]);
+        }
+      }
+    }
+
+    actionInnerDeep(ary);
+
+    return result;
+
+  },
+
+  flattenDepth: function(ary, depth = 1) {
+    var result = [];
+    var initDepth = 0;
+
+    function actionInnerDeep(ary) {
+      for (let i = 0; i < ary.length; i++) {
+        if (Array.isArray(ary[i])) {
+          if (initDepth < depth) {
+            initDepth++;
+            actionInnerDeep(ary[i]);
+          } else {
+            result.push(ary[i]);
+          }
+        } else {
+          result.push(ary[i]);
+        }
+      }
+    }
+
+    actionInnerDeep(ary, depth);
+
+    return result;
+  },
 
 
 }
+
 
 
 
@@ -120,8 +180,8 @@ var hailen6 = {
   drop,✔
   findIndex,
   findLastIndex,
-  flatten,
-  flattenDeep,
+  flatten,✔
+  flattenDeep,✔
   flattenDepth
   fromPairs,
   head,
