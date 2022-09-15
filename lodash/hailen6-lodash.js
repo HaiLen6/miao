@@ -162,6 +162,16 @@ var hailen6 = {
     return result;
   },
 
+  fromPairs: function(ary) {
+    var result = {};
+
+    for (let i = 0; i < ary.length; i++) {
+      result[ary[i][0]] = ary[i][1];
+    }
+
+    return result;
+  },
+
 
 }
 
@@ -182,8 +192,8 @@ var hailen6 = {
   findLastIndex,
   flatten,✔
   flattenDeep,✔
-  flattenDepth
-  fromPairs,
+  flattenDepth✔
+  fromPairs,✔
   head,
   indexOf,
   lastIndexOf,
@@ -219,5 +229,22 @@ var hailen6 = {
   get,
   has,
   mapKeys,
-  mapValues
+  mapValues,
+  range,
+  stringifyJSON,
+  concat,
+  isEqual,
+  repeat,
+  padStart,
+  padEnd,
+  pad,
+  keys,
+  random,
+  round,
+  ceil,
+  floor,
+  cloneDeep,
+  trim,
+  trimStart,
+  trimEnd
 */
