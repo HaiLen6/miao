@@ -238,6 +238,40 @@ var hailen6 = {
     }
   },
 
+  join: function(ary, separator = ',') {
+    var initString = '';
+
+    for (let i = 0; i < ary.length; i++) {
+      if (i < ary.length - 1) {
+        initString = initString + ary[i] + separator;
+      } else {
+        initString += ary[i];
+      }
+    }
+
+    return initString;
+  },
+
+  last: function(ary) {
+    return ary.at(-1);
+  },
+
+  pull: function(ary, ...value) {
+    if (value.length === 0) {
+      return ary;
+    }
+
+    for (let i = 0; i < ary.length; i++) {
+      for (let j of value) {
+        if (ary[i] === j) {
+          ary.splice(i, 1);
+        }
+      }
+    }
+
+    return ary;
+  },
+
 
 }
 
@@ -264,8 +298,8 @@ var hailen6 = {
   indexOf,✔
   lastIndexOf,✔
   initial,✔
-  join,
-  last,
+  join,✔
+  last,✔
   pull,
   reverse,
   every,
