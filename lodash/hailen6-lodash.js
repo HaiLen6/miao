@@ -265,6 +265,7 @@ var hailen6 = {
       for (let j of value) {
         if (ary[i] === j) {
           ary.splice(i, 1);
+          i--;
         }
       }
     }
@@ -288,7 +289,7 @@ var hailen6 = {
   chunk,✔
   fill,✔
   drop,✔
-  findIndex,
+  findIndex,  没通过, 好好想想原因!
   findLastIndex,
   flatten,✔
   flattenDeep,✔
@@ -300,7 +301,7 @@ var hailen6 = {
   initial,✔
   join,✔
   last,✔
-  pull,
+  pull,✔
   reverse,
   every,
   some
