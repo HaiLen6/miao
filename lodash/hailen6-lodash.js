@@ -273,11 +273,61 @@ var hailen6 = {
     return ary;
   },
 
+  reverse: function(ary) {
+    if (ary.length === 0) {
+      return ary;
+    }
+
+    for (let i = 0; i < Math.ceil(ary.length / 2); i++) {
+      var temp = ary[i];
+      ary[i] = ary[ary.length - 1 - i];
+      ary[ary.length - 1 - i] = temp;
+    }
+
+    return ary;
+  },
+
+  size: function(collection) {
+    if (Array.isArray(collection)) {
+      return collection.length;
+    } else if (typeof(collection) === "string") {
+      return collection.length;
+    } else if (typeof(collection) === "object") {
+      let num = 0;
+      for (const key in collection) {
+        num++;
+      }
+
+      return num;
+    }
+  },
+
+  pullAll: function(ary, values) {
+    if (values.length === 0) {
+      return ary;
+    }
+
+    for (let i = 0; i < ary.length; i++) {
+      for (let j of values) {
+        if (ary[i] === j) {
+          ary.splice(i, 1);
+          i--;
+        }
+      }
+    }
+
+    return ary;
+  },
 
 }
 
 
 
+function demo() {
+
+  var vabiable = new Function('a', "return a")
+  return vabiable(1);
+}
 
 
 
@@ -302,7 +352,7 @@ var hailen6 = {
   join,✔
   last,✔
   pull,✔
-  reverse,
+  reverse,✔
   every,
   some
   countBy,
@@ -313,7 +363,7 @@ var hailen6 = {
   filter,
   reduce,
   reduceRight,
-  size,
+  size,✔
   sortBy,
   sample,
   isUndefined,
